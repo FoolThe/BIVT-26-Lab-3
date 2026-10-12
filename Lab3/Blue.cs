@@ -59,29 +59,41 @@ namespace Lab3
         public int Task3(int n)
         {
             int count = 0;
-
             // code here
             for (int i = 0; i < n; i++)
             {
-                bool has2or3 = false; 
-                for (int j = 0; j < 4; j++)
+                bool has2or3 = false;
+                Console.Write("первая оценка");
+                int grade = int.Parse(Console.ReadLine());
+                if (grade == 2 || grade == 3)
                 {
-                    Console.Write($"{j} оценка");
-                    int grade = int.Parse(Console.ReadLine());
-
-                    if (grade == 2 || grade == 3)
-                    {
-                        has2or3 = true;
-                    }
+                    has2or3 = true;
                 }
-
+                Console.Write("вторая оценка");
+                int grade2 = int.Parse(Console.ReadLine());
+                if (grade2 == 2 || grade2 == 3)
+                {
+                    has2or3 = true;
+                }
+                Console.Write("третья оценка");
+                int grade3 = int.Parse(Console.ReadLine());
+                if (grade3 == 2 || grade3 == 3)
+                {
+                    has2or3 = true;
+                }
+                Console.Write("четвёртая оценка");
+                int grade4 = int.Parse(Console.ReadLine());
+                if (grade4 == 2 || grade4 == 3)
+                {
+                    has2or3 = true;
+                }
                 if (!has2or3)
                 {
                     count++;
                 }
             }
             // end
-
+            
             return count;
         }
         public (int tasks, int serias) Task4(int time, int tasks)
