@@ -15,13 +15,13 @@ namespace Lab3
                 {
                     if (weight < norma)
                     {
-                        milk+=glass;
+                        milk+=glass/1000;
                     }
                 }
             }
             // end
 
-            return milk/1000;
+            return Math.Round(milk, 4);
         }
         public (int first, int second, int third, int fourth) Task2(int n)
         {
@@ -59,6 +59,7 @@ namespace Lab3
         public int Task3(int n)
         {
             int count = 0;
+
             // code here
             for (int i = 0; i < n; i++)
             {
@@ -93,7 +94,7 @@ namespace Lab3
                 }
             }
             // end
-            
+
             return count;
         }
         public (int tasks, int serias) Task4(int time, int tasks)
@@ -131,37 +132,35 @@ namespace Lab3
             {
                 case 1:
                     power += 10;
-                    intellect -= 5;
+                    intellect = intellect-5>= 0 ? intellect - 5 : 0;
                     break;
 
                 case 2:
-                    agility += 10;
-                    power -= 5;
+                    agility += 5;
+                    intellect = intellect - 5 >= 0 ? intellect - 5 : 0;
+                    power = power - 5 >= 0 ? power - 5 : 0;
                     break;
 
                 case 3:
                     power += 10;
-                    intellect -= 5;
+                    intellect = intellect - 5 >= 0 ? intellect - 5 : 0;
                     break;
 
                 case 4:
-                    agility += 15;
-                    power -= 10;
-                    intellect -= 10;
+                   agility += 15;
+                   power = power - 10 >= 0 ? power - 10 : 0;
+                   intellect = intellect - 10 >= 0 ? intellect - 10 : 0;
                     break;
 
                 case 5:
-                    intellect += 7;
-                    power -= 5;
+                   intellect += 7;
+                   power = power - 5 >= 0 ? power - 5 : 0;
                     break;
 
                 default:
                     Console.WriteLine("нет такой статуи!");
                     break;
             }
-            if (power < 0) power = 0;
-            if (agility < 0) agility = 0;
-            if (intellect < 0) intellect = 0;
             // end
 
             return (power, agility, intellect);
